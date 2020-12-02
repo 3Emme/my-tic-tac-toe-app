@@ -7,6 +7,25 @@ ol, ul {
   padding-left: 30px;
 }
 
+.history {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.history:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+li {
+  padding-bottom: 10px;
+}
+
 .board-row:after {
   clear: both;
   content: "";
@@ -32,7 +51,11 @@ ol, ul {
   width: 100px;
 }
 
-.square:focus {
+.square:hover {
+  background-color: rgb(231, 251, 255);
+}
+
+.square:focus{
   outline: none;
 }
 
