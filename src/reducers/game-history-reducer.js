@@ -1,12 +1,26 @@
-export default (state = [], action) => {
-  const { history } = action;
+const gameHistoryReducer = (state = [], action) => {
+
+  const { squares } = action;
   switch (action.type) {
     case 'ADD_HISTORY':
-      return state.concat([history]);
+      return state.concat(squares)
     default:
       return state;
-  };
+  }
 };
+
+export default gameHistoryReducer;
+
+// export default (state = [], action) => {
+
+//   const { squares } = action;
+//   switch (action.type) {
+//     case 'ADD_HISTORY':
+//       return state.concat(squares)
+//       default:
+//         return state;
+//   }
+// };
 
 // export default (state = {}, action) => {
 //   const { names, location, issue, id } = action;
@@ -27,4 +41,4 @@ export default (state = [], action) => {
 //   default:
 //     return state;
 //   }
-// };
+// }; 
