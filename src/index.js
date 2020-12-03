@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './components/App';
+import { createStore } from 'redux';
+import rootReducer from './reducers/index';
+import { Provider, provider } from 'react-redux';
+
+const store = createStore(rootReducer);
 
 function Square(props) {
   return (
@@ -127,7 +133,9 @@ class Game extends React.Component {
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+  <Provider store={store}>
+    <Game />
+  </Provider>,
   document.getElementById('root') 
 );
 

@@ -8,4 +8,3 @@ const xIsNextReducer = (state = true, action) => {
 };
 
 export default xIsNextReducer;
-

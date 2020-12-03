@@ -1,11 +1,13 @@
 import stepNumberReducer from '../../reducers/step-number-reducer'
 
+
 const history = [
   {squares: [null, null, null, null, null, null, null, null, null]},
   {squares: ['X', null, null, null, null, null, null, null, null]}
 ];
 
 const historySlice = history.slice(0, 2 + 1);
+const currentStepNumber = 0;
 
 
 describe("stepNumberReducer", () => {
@@ -14,6 +16,10 @@ describe("stepNumberReducer", () => {
   });
 
   test('Should return the length of the history as the new step number', () => {
-    expect(stepNumberReducer(historySlice, { type: 'STEP_NUMBER' })).toEqual(2);
+    const action = {
+      type: 'STEP_NUMBER',
+      historySlice: historySlice
+    };
+    expect(stepNumberReducer(currentStepNumber, action)).toEqual(2);
   });
 });
