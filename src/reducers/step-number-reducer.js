@@ -1,5 +1,5 @@
-const stepNumberReducer = (state = [], action) => {
-  const { historySlice } = action
+const stepNumberReducer = (state = 0, action) => {
+  const { historySlice } = action;
   switch(action.type) {
     case 'STEP_NUMBER':
       return historySlice.length

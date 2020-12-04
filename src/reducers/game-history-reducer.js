@@ -1,9 +1,10 @@
 const gameHistoryReducer = (state = [{squares: Array(9).fill(null)}], action) => {
 
-  const { squares } = action;
+  const { squares, history } = action;
   switch (action.type) {
     case 'ADD_HISTORY':
-      return state.concat({squares: squares})
+      console.log(history);
+      return history.concat({squares: squares})      
     default:
       return state;
   }
